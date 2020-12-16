@@ -72,7 +72,7 @@ public class AuthorizationServiceConfiguration {
      * The authorization service's token exchange and refresh endpoint.
      */
     @NonNull
-    public final Uri tokenEndpoint;
+    public Uri tokenEndpoint;
 
     /**
      * The authorization service's client registration endpoint.
@@ -155,6 +155,10 @@ public class AuthorizationServiceConfiguration {
             JsonUtil.put(json, KEY_DISCOVERY_DOC, discoveryDoc.docJson);
         }
         return json;
+    }
+
+    public void setTokenEndpoint(@NonNull Uri tokenEndpoint){
+        this.tokenEndpoint = tokenEndpoint;
     }
 
     /**
